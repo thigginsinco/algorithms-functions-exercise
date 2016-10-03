@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+
+// 5. Write function that translates a text to Pig Latin and back. English is translated to Pig 
+// Latin by taking the first letter of every word, moving it to the end of the word and adding 
+// "ay".
+
+// "The quick brown fox" -> "Hetay uickqay rownbay oxfay".
+	
+	function transToPig(word, firstword) {
+		var pigWord = [];
+		for (var i = 1; i < word.length; i++) {
+			pigWord.push(word[i]);
+			
+		}
+		//pigWord.push(word[0].toUpperCase());
+		pigWord.push(word[0]);
+		pigWord.push("ay");
+		return pigWord.join("");
+	}		
+	// pop into var to get the last letter first
+	// run through the rest of the word
+
+	function transToEng(word, firstword) {
+		var pigWord = [];
+		var array = word.slice();
+		array.pop();
+		array.pop();
+		var popped = array.pop();
+		pigWord.push(popped)
+		for (var i = 0; i < array.length; i++) {
+			pigWord.push(array[i]);
+			
+		}
+		
+		return pigWord.join("");
+	}
+
+	
+
+	// convert incoming sentence into individual words
+	// run the function for which to translate
+	// pig to english remove the ay from the end of the word
+	// 
+	function sentenceToString(sentence, translate) {
+		debugger;
+		var firstword = false;
+		var indWords = [];
+		sentence = sentence.split(" ");
+		if (translate ==="pig") {
+			for (var word of sentence) {
+				if (word === sentence[0]) {
+					var firstword = true;
+					indWords.push(transToPig(word, firstword));
+				}else
+					indWords.push(transToPig(word, firstword));
+			}
+		}else 
+			for (var word of sentence) {
+				//sentence.pop();
+				//sentence.pop();
+				//var popped = sentence.pop();				
+				indWords.push(transToEng(word, firstword));
+			}
+		return indWords.join(" ");
+	}
+
+
+
+
+
+		//console.log(sentenceToString("The quick brown fox", "pig") === "heTay uickqay rownbay oxfay");
+		console.log(sentenceToString("heTay uickqay rownbay oxfay", "eng") === "The quick brown fox");
+	</script>
+
+
+
+
+</body>
+</html>

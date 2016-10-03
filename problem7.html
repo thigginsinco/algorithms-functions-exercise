@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		// 7. Write a function which takes in an array of numbers and a max cutoff 
+		// value, and returns a new array with elements limited by the cutoff value.
+		// [1,2,3,4,5,6,7,8], 4 -> [1,2,3,4,4,4,4,4]
+		// [1,5,7,3,1,5,7], 3 -> [1,3,3,3,1,3,3]
+		// read in all values of the array, if the value is greater than max cutoff
+		// put the max value into that posotion of the array
+
+
+		function maxCutoff(arr, cutoff){
+			for (var i in arr) {
+				if (arr[i] > cutoff) {
+					arr[i] = cutoff;
+				}
+			}
+			return arr;
+		}
+
+
+		console.log(maxCutoff([1,2,3,4,5,6,7,8], 4));
+		console.log(maxCutoff([1,5,7,3,1,5,7], 3));
+	</script>
+</body>
+</html>

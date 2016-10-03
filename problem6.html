@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+	// 6. Write a function which takes in two arrays and determines if they contain the same 
+	// number of the same values.
+	// [], [] -> true
+	// [2, 3, 4], [1, 2, 3] -> false
+	// ["a", "c", "b"], ["a", "b", "c"] -> true
+	// [1, 1, 1], [1, 1, 1, 1] -> false
+	// Check to see if the 2 incoming array have the same length
+	// it they do, then check to see if arr1 includes arr2[i]
+	// if not, return false ithey do, return true
+
+	function checkArrays(arr1, arr2) {
+		//debugger;
+		if (arr1.length === arr2.length) {
+			for (var i of arr2) {
+				if (arr1.indexOf(arr2[i])) {
+					//do nothing
+				} else
+					return false;
+			}
+			return true;
+		}else
+			return false;
+	}
+	console.log(checkArrays([], []));
+	console.log(checkArrays([2, 3, 4], [1, 2, 3]));
+	console.log(checkArrays(["a", "c", "b"], ["a", "b", "c"]));
+	console.log(checkArrays([1 , 1, 1], [1, 1, 1, 1]));
+
+
+
+	</script>
+</body>
+</html>

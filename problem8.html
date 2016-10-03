@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 	8. Write a function which takes no input and returns 
+		//  an array of 10 distinct randomly generated integers between 1 and 100.
+		// -> [48, 5, 32, 2, 10, 11, 34, 95, 82, 93] (good!)
+		// -> [1, 1, 24, 63, 45, 84, 17, 11, 59, 13] (bad - duplicated number)
+		// use math.random() to generate a number between 1 and 100
+		// make sure that number is an integer
+		// make sure that number is not a duplicate number
+		// put number into array
+
+		function makearray() {
+			//debugger;
+			var arr = [];
+			var number = 0;
+			while(arr.length <10) {
+				number = Math.random() * 100;
+				number = Math.round(number);
+				if (arr.includes(number)) {
+					//do nothing
+				}else if (number > 0) {
+					arr.push(number)
+				}
+			}
+			return arr;
+
+		}
+
+		console.log(makearray())
+	</script>
+</body>
+</html>

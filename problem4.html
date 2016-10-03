@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+// Write a function which takes an array of integers and returns an array with any duplicate 
+// integers removed.
+// [1,1,2,3,1,2,3] -> [1,2,3]
+// [1,4,4,4,2,2,4,4,4] -> [1,4,2]
+// make a new array but before pushing the new value, check the array for that integer,
+// if it has been added already to output do not add again
+		
+		function remdupes(arr) {
+			var output = [];
+			output.push(arr[0]); //the first valu will not be a dupe, something to compare to
+			for (var i of arr) {
+				if (output.includes(arr[i])) {
+					//do nothing
+				}else
+					output.push(arr[i]);
+				}
+				return output;	
+			} 
+			
+		console.log(remdupes([1,1,2,3,1,2,3]));
+		console.log(remdupes([1,4,4,4,2,2,4,4,4]));
+		
+
+	</script>
+</body>
+</html>
